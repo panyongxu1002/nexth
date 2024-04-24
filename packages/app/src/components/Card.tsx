@@ -41,7 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
             <input
               type='text'
               placeholder='Code'
-              className=' bg-white placeholder-center text-center text-neutral-400 w-[300px] h-[70px] justify-center input input-bordered max-w-xs '
+              className=' bg-white color-white placeholder-center text-[24px] placeholder-neutral-400 text-center text-neutral w-[300px] h-[70px] justify-center input input-bordered max-w-xs '
             />
             <button className='justify-center px-12 py-5 rounded-3xl max-md:px-5 text-white bg-emerald-500'>
               Enter
@@ -57,11 +57,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
             <span className='ml-[10px] text-emerald-500 text-ellipsis'>Find in community &gt;</span>
           </div>
         )}
-        {/* <div className='mt-5 text-base tracking-tight text-center text-ellipsis text-stone-300'>
-          {ctaSubtext}
-          Don’t have a code?
-          <span className='text-emerald-500 text-ellipsis'>Find in community &gt;</span>
-        </div> */}
       </div>
     </section>
   )
