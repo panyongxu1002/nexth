@@ -10,5 +10,9 @@
     "dev": "yarn workspaces -pt run dev",
     "build": "yarn workspaces -pt run build",
     "test": "yarn workspaces -pt run test"
+  },
+  "dependencies": {
+    "@ant-design/web3": "^1.10.0",
+    "antd": "^5.16.4"
   }
 }
