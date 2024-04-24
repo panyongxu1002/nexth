@@ -13,7 +13,7 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, ctaSubtext, imageSrc, code }) => {
   return (
-    <section className='flex justify-center h-[892px] items-center px-16 py-20 w-full text-white bg-zinc-900 max-md:px-5 max-md:max-w-full'>
+    <section className='flex justify-center  h-[892px] items-center px-16 py-20 w-full text-white bg-zinc-900 max-md:px-5 max-md:max-w-full'>
       <div className='flex flex-col items-center mt-10 mb-4 max-w-full w-[791px]'>
         <Image
           loading='lazy'
@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
             Airdrop
           </span>
         </h1>
-        <p className='self-stretch mt-5 text-3xl font-medium leading-9 text-center text-ellipsis text-stone-300 max-md:max-w-full'>
+        <p className='self-stretch mt-5 text-2xl  font-medium leading-9 text-center text-ellipsis text-stone-300 max-md:max-w-full'>
           {description}
         </p>
         {code ? (
@@ -49,7 +49,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
           </div>
         )}
 
-        <p className='mt-5 text-base tracking-tight text-center text-ellipsis text-stone-300'>{ctaSubtext}</p>
+        {code ? (
+          <div className='mt-5 text-base tracking-tight text-center text-ellipsis text-stone-300'>{ctaSubtext}</div>
+        ) : (
+          <div className='mt-5 text-base tracking-tight text-center text-ellipsis text-stone-300'>
+            Don’t have a code?
+            <span className='ml-[10px] text-emerald-500 text-ellipsis'>Find in community &gt;</span>
+          </div>
+        )}
+        {/* <div className='mt-5 text-base tracking-tight text-center text-ellipsis text-stone-300'>
+          {ctaSubtext}
+          Don’t have a code?
+          <span className='text-emerald-500 text-ellipsis'>Find in community &gt;</span>
+        </div> */}
       </div>
     </section>
   )

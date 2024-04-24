@@ -145,6 +145,26 @@ const myData: LeaderboardItemProps = {
   totalPoints: '23,241',
 }
 
+const MyRank: React.FC<LeaderboardItemProps> = ({ rank, avatar, name, holdingVolume, referralPoints, totalPoints }) => {
+  return (
+    <div
+      className={`flex text-black gap-5 h-[60px] justify-between py-2.5  w-full font-medium text-black-400 max-md:flex-wrap max-md:max-w-full hover:bg-gray-100`}>
+      <div className='flex gap-5 justify-between whitespace-nowrap'>
+        <div className='w-[100px] self-stretch my-auto'>{rank}</div>
+        <div className='w-[400px] pl-[30px] flex align-center gap-2.5 self-stretch'>
+          <Avatar size={36} className={`my-auto mb-2`}>{name.slice(-4)}</Avatar>
+          <div className={`my-auto text-emerald-500 leading-[30px] h-[30px]`}>{name}</div>
+        </div>
+      </div>
+      <div className='flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px]'>
+        <div className='w-[240px] self-stretch my-auto'>{holdingVolume}</div>
+        <div className='w-[240px] self-stretch my-auto'>{referralPoints}</div>
+        <div className=' self-stretch my-auto'>{totalPoints}</div>
+      </div>
+    </div>
+  )
+}
+
 export const RankingList: React.FC = () => {
   return (
     <div className='flex flex-col h-[900px] items-center px-20 py-16 w-full font-semibold bg-neutral-100 max-md:px-5 max-md:max-w-full'>
@@ -154,9 +174,6 @@ export const RankingList: React.FC = () => {
           <div className='flex gap-5 justify-between whitespace-nowrap'>
             <div className='w-[100px]'>Rank</div>
             <div className='w-[400px] pl-[30px]'>Address</div>
-            {/* <div >Holding volume</div>
-            <div>Referral Points</div>
-            <div>Total Points</div> */}
           </div>
           <div className='flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px]'>
             <div className='w-[240px]'>Holding volume</div>
@@ -169,22 +186,7 @@ export const RankingList: React.FC = () => {
           renderItem={(item, index) => <LeaderboardItem key={index} {...item} />}
           className='h-[600px] overflow-auto text-black'
         />
-        {/* <List.Item className='flex gap-5 justify-between pr-5 pl-2.5 w-full whitespace-nowrap border-t border-solid border-stone-300 border-opacity-50 max-md:flex-wrap max-md:max-w-full'>
-          <div className='flex gap-5 justify-between max-md:flex-wrap'>
-            <div className='my-auto text-black'>346,223</div>
-            <div className='flex gap-2.5 p-2.5 text-emerald-500'>
-              <Avatar size={36} />
-              <div className='my-auto'>0x24rf...dcat</div>
-            </div>
-          </div>
-          <div className='flex gap-5 justify-between my-auto text-black max-md:flex-wrap max-md:max-w-full'>
-            <div>516.26</div>
-            <div>680</div>
-            <div>23,241</div>
-          </div>
-        </List.Item> */}
-
-        <LeaderboardItem className='py-0!important pl-0!important' {...myData}></LeaderboardItem>
+        <MyRank {...myData}></MyRank>
       </div>
     </div>
   )
