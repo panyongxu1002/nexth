@@ -152,7 +152,9 @@ const MyRank: React.FC<LeaderboardItemProps> = ({ rank, avatar, name, holdingVol
       <div className='flex gap-5 justify-between whitespace-nowrap'>
         <div className='w-[100px] self-stretch my-auto'>{rank}</div>
         <div className='w-[400px] pl-[30px] flex align-center gap-2.5 self-stretch'>
-          <Avatar size={36} className={`my-auto mb-2`}>{name.slice(-4)}</Avatar>
+          <Avatar size={36} className={`my-auto mb-2`}>
+            {name.slice(-4)}
+          </Avatar>
           <div className={`my-auto text-emerald-500 leading-[30px] h-[30px]`}>{name}</div>
         </div>
       </div>
