@@ -184,7 +184,7 @@ export const RankingList: React.FC = () => {
           </div>
         </List.Item> */}
 
-        <LeaderboardItem className='py-0 pl-0' {...myData}></LeaderboardItem>
+        <LeaderboardItem className='py-0!important pl-0!important' {...myData}></LeaderboardItem>
       </div>
     </div>
   )
