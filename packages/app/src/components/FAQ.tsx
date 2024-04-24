@@ -31,7 +31,7 @@ export function FAQ() {
 
   const toggleExpand = (index: number) => {
     if (expandedIndex === index) {
-      setExpandedIndex(null) 
+      setExpandedIndex(null)
     } else {
       setExpandedIndex(index)
     }
@@ -57,7 +57,7 @@ export function FAQ() {
               )}
             </div>
             {index === expandedIndex ? (
-              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '24px' }} />
+              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '100px' }} />
             ) : (
               <DownOutlined className='shrink-0 self-start aspect-square' style={{ fontSize: '24px' }} />
             )}

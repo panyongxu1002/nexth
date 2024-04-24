@@ -4,6 +4,7 @@ const nextConfig = {
   //   domains: ['cdn.builder.io'],
   // },
   reactStrictMode: true,
+  // swcMinify: true,
   transpilePackages: ['@ant-design', 'antd', 'rc-util', 'rc-pagination', 'rc-picker'],
   webpack: (config) => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding')
