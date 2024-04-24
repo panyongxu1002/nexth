@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import Hero from '@/assets/icons/hreo.png'
+import { LinkComponent } from './LinkComponent'
 
 interface HeroSectionProps {
   title: string
@@ -43,9 +44,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
               placeholder='Code'
               className=' bg-white color-white placeholder-center text-[24px] placeholder-neutral-400 text-center text-neutral w-[300px] h-[70px] justify-center input input-bordered max-w-xs '
             />
-            <button className='justify-center px-12 py-5 rounded-3xl max-md:px-5 text-white bg-emerald-500'>
-              Enter
-            </button>
+            <LinkComponent href='/airdrop'>
+              <button className='justify-center px-12 py-5 rounded-3xl max-md:px-5 text-white bg-emerald-500'>
+                Enter
+              </button>
+            </LinkComponent>
           </div>
         )}
 

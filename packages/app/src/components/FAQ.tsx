@@ -57,7 +57,7 @@ export function FAQ() {
               )}
             </div>
             {index === expandedIndex ? (
-              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '100px' }} />
+              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '24px' }} />
             ) : (
               <DownOutlined className='shrink-0 self-start aspect-square' style={{ fontSize: '24px' }} />
             )}
