@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
   )
 }
 
-export function Card({ code }) {
+export function Card({ code }: any) {
   console.log('🚀 ~ Card ~ code:', code)
   return (
     <main>
