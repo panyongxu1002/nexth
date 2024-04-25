@@ -2,10 +2,10 @@ import * as React from 'react'
 
 export function Quest() {
   return (
-    <div className='flex flex-col items-center px-20 py-16 w-full bg-neutral-100 max-md:px-5 max-md:max-w-full'>
-      <div className='text-5xl font-semibold text-black max-md:text-4xl'>Quest</div>
+    <div className='flex flex-col items-center px-20 py-16 w-full bg-neutral-100 max-md:px-2.5 max-md:max-w-full'>
+      <div className='text-5xl font-semibold text-black max-md:text-4xl pb-2.5'>Quest</div>
       <div className='p-8 mt-2.5 w-full bg-white rounded-3xl max-w-[1340px] max-md:px-5 max-md:max-w-full'>
-        <div className='flex gap-5 max-md:flex-col max-md:gap-0'>
+        <div className='flex  gap-5 max-md:flex-col max-md:gap-0'>
           <div className='flex flex-col w-[81%] max-md:ml-0 max-md:w-full'>
             <div className='flex flex-col grow justify-center tracking-tight max-md:mt-10 max-md:max-w-full'>
               <div className='text-2xl leading-8 text-black font-[510] max-md:max-w-full'>Quest One</div>
@@ -38,7 +38,7 @@ export function Quest() {
           </div>
         </div>
       </div>
-      <div className='p-8 mt-2.5 w-full bg-white rounded-3xl border border-solid border-neutral-100 max-w-[1340px] max-md:px-5 max-md:max-w-full'>
+      <div className='p-8 mt-2.5 w-full bg-white rounded-3xl border border-solid border-neutral-100 max-w-[1340px] max-md:max-w-full'>
         <div className='flex gap-5 max-md:flex-col max-md:gap-0'>
           <div className='flex flex-col w-[81%] max-md:ml-0 max-md:w-full'>
             <div className='flex flex-col grow justify-center tracking-tight max-md:mt-10 max-md:max-w-full'>
@@ -55,10 +55,10 @@ export function Quest() {
           </div>
         </div>
       </div>
-      <div className='p-8 mt-2.5 w-full bg-gradient-to-l from-emerald-500 via-emerald-400 to-emerald-600 rounded-3xl max-w-[1340px] max-md:px-5 max-md:max-w-full'>
+      <div className='p-8 mt-2.5 w-full bg-gradient-to-l from-emerald-500 via-emerald-400 to-emerald-600 rounded-3xl max-w-[1340px] max-md:px-3 max-md:py-5 max-md:max-w-full'>
         <div className='flex gap-5 max-md:flex-col max-md:gap-0'>
           <div className='flex flex-col w-[81%] max-md:ml-0 max-md:w-full'>
-            <div className='flex flex-col grow justify-center tracking-tight text-white max-md:mt-10 max-md:max-w-full'>
+            <div className='flex flex-col grow justify-center tracking-tight text-white max-md:max-w-full'>
               <div className='text-2xl leading-8 font-[510] max-md:max-w-full'>Refer and Earn Points</div>
               <div className='mt-1.5 text-base text-ellipsis max-md:max-w-full'>
                 Lorem ipsum dolor sit amet consectetur. Ullamcorper risus neque consequat amet dictum vestibulum ipsum.
@@ -66,7 +66,7 @@ export function Quest() {
             </div>
           </div>
           <div className='flex flex-col ml-5 w-[19%] max-md:ml-0 max-md:w-full'>
-            <div className='flex grow gap-2.5 justify-center px-16 py-3.5 w-full text-2xl font-semibold leading-8 text-black whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10'>
+            <div className='flex grow gap-2.5 justify-center px-16 py-3.5 w-full text-2xl font-semibold leading-8 text-black whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-5'>
               <div>fDrgYk</div>
               <img
                 loading='lazy'

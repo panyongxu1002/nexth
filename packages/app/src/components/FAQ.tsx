@@ -46,9 +46,9 @@ export function FAQ() {
           <div
             key={index}
             onClick={() => toggleExpand(index)}
-            className={`flex gap-5 cursor-pointer p-8 border-t border-solid border-black border-opacity-10 max-md:flex-wrap max-md:px-5 ${index === expandedIndex ? 'bg-emerald-500 text-white ' : ''} `}>
+            className={`flex gap-5 cursor-pointer p-8 ${index !== 0 ? 'border-t' : ''} border-solid border-black border-opacity-10 max-md:flex-wrap max-md:px-5 ${index === expandedIndex ? 'bg-emerald-500 text-white ' : ''} `}>
             <div className='flex flex-col flex-1 justify-center max-md:max-w-full'>
-              <div className='text-2xl font-medium leading-8 text-ellipsis max-md:max-w-full'>{item.question}</div>
+              <div className='text-2xl font-medium leading-8 text-ellipsis max-md:max-w-full max-md:text-lg'>{item.question}</div>
               {index === expandedIndex && (
                 <div className='mt-2 text-base leading-5 max-md:max-w-full'>
                   {item.answer}
@@ -57,9 +57,9 @@ export function FAQ() {
               )}
             </div>
             {index === expandedIndex ? (
-              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '24px' }} />
+              <UpOutlined className='shrink-0 self-start aspect-square ' style={{ fontSize: '16px' }} />
             ) : (
-              <DownOutlined className='shrink-0 self-start aspect-square' style={{ fontSize: '24px' }} />
+              <DownOutlined className='shrink-0 self-start aspect-square' style={{ fontSize: '16px' }} />
             )}
           </div>
         ))}
