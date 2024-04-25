@@ -56,10 +56,8 @@ const LinkColumn: React.FC<LinkColumnProps> = ({ title, links }) => (
   <div className='flex flex-col justify-center'>
     <div className='text-lg font-semibold text-white'>{title}</div>
     {links.map((item, index) => (
-      <LinkComponent href={item.link} isExternal>
-        <div key={index} className='mt-3'>
-          {item.name}
-        </div>
+      <LinkComponent key={index} href={item.link} isExternal>
+        <div className='mt-3'>{item.name}</div>
       </LinkComponent>
     ))}
   </div>
