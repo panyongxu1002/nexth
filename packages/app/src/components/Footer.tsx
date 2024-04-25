@@ -35,14 +35,15 @@ interface SocialIconProps {
   src: string
   alt: string
   link: string
+  index: number
 }
 interface SocialProps {
   name: string
   link: string
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, link }) => (
-  <LinkComponent href={link} isExternal>
+const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, link, index }) => (
+  <LinkComponent key={index} href={link} isExternal>
     <img loading='lazy' src={src} alt={alt} className='shrink-0 w-8 aspect-square' />
   </LinkComponent>
 )
@@ -127,7 +128,7 @@ export function Footer() {
             </p>
             <div className='flex gap-2.5 mt-5'>
               {socialIcons.map((icon, index) => (
-                <SocialIcon key={index} src={icon.src} alt={icon.alt} link={icon.link} />
+                <SocialIcon index={index} src={icon.src} alt={icon.alt} link={icon.link} />
               ))}
             </div>
           </div>
