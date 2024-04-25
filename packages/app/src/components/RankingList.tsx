@@ -24,12 +24,12 @@ const LeaderboardItem: React.FC<LeaderboardItemProps> = ({
     className={`flex text-black gap-5 h-[60px] justify-between py-2.5 pr-5 pl-2.5 w-full font-medium text-black-400 max-md:flex-wrap max-md:max-w-full hover:bg-gray-100 ${className}`}>
     <div className='flex gap-5 justify-between whitespace-nowrap'>
       <div className='w-[100px] self-stretch my-auto'>{rank}</div>
-      <div className='w-[400px] pl-[30px] flex gap-2.5 self-stretch p-2.5'>
+      <div className='w-[400px] pl-[30px] flex gap-2.5 self-stretch p-2.5 max-md:w-[200px]'>
         <Avatar size={36}>{name.slice(-4)}</Avatar>
         <div className={`my-auto ${className ? 'text-emerald-500' : ''}`}>{name}</div>
       </div>
     </div>
-    <div className='flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px]'>
+    <div className=' gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px] hidden md:flex'>
       <div className='w-[240px] self-stretch my-auto'>{holdingVolume}</div>
       <div className='w-[240px] self-stretch my-auto'>{referralPoints}</div>
       <div className=' self-stretch my-auto'>{totalPoints}</div>
@@ -151,14 +151,14 @@ const MyRank: React.FC<LeaderboardItemProps> = ({ rank, avatar, name, holdingVol
       className={`flex text-black gap-5 h-[60px] justify-between py-2.5  w-full font-medium text-black-400 max-md:flex-wrap max-md:max-w-full hover:bg-gray-100`}>
       <div className='flex gap-5 justify-between whitespace-nowrap'>
         <div className='w-[100px] self-stretch my-auto'>{rank}</div>
-        <div className='w-[400px] pl-[30px] flex align-center gap-2.5 self-stretch'>
+        <div className='w-[400px] pl-[30px] flex align-center gap-2.5 self-stretch max-md:w-[200px]'>
           <Avatar size={36} className={`my-auto mb-2`}>
             {name.slice(-4)}
           </Avatar>
           <div className={`my-auto text-emerald-500 leading-[30px] h-[30px]`}>{name}</div>
         </div>
       </div>
-      <div className='flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px]'>
+      <div className='gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px] hidden md:flex'>
         <div className='w-[240px] self-stretch my-auto'>{holdingVolume}</div>
         <div className='w-[240px] self-stretch my-auto'>{referralPoints}</div>
         <div className=' self-stretch my-auto'>{totalPoints}</div>
@@ -175,18 +175,18 @@ export const RankingList: React.FC = () => {
         <div className='flex gap-5  justify-between py-2.5 pr-5 pl-2.5 w-full font-medium text-neutral-400 max-md:flex-wrap max-md:max-w-full'>
           <div className='flex gap-5 justify-between whitespace-nowrap'>
             <div className='w-[100px]'>Rank</div>
-            <div className='w-[400px] pl-[30px]'>Address</div>
+            <div className='w-[400px] pl-[30px] max-md:w-[200px]'>Address</div>
           </div>
-          <div className='flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full pr-[20px]'>
-            <div className='w-[240px]'>Holding volume</div>
-            <div className='w-[240px]'>Referral Points</div>
+          <div className='flex gap-5 justify-between max-md:hidden max-md:max-w-full pr-[20px]'>
+            <div className='w-[240px] '>Holding volume</div>
+            <div className='w-[240px] '>Referral Points</div>
             <div>Total Points</div>
           </div>
         </div>
         <List
           dataSource={leaderboardData}
           renderItem={(item, index) => <LeaderboardItem key={index} {...item} />}
-          className='h-[600px] overflow-auto text-black'
+          className='h-[600px] overflow-auto max-md:overflow-x-hidden text-black'
         />
         <MyRank {...myData}></MyRank>
       </div>

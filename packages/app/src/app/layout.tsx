@@ -8,6 +8,7 @@ import { cookieToInitialState } from 'wagmi'
 import { WALLETCONNECT_CONFIG } from '@/utils/web3'
 import { headers } from 'next/headers'
 import '../assets/globals.css'
+import Head from 'next/head'
 
 export const metadata: Metadata = {
   applicationName: SITE_NAME,
@@ -58,8 +59,18 @@ export default function RootLayout(props: PropsWithChildren) {
           rel='icon'
           href={`data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${SITE_EMOJI}</text></svg>`}
         />
+        
 
       </head> */}
+      <Head>
+        {/* 设置视口标签 */}
+        <meta
+          name='viewport'
+          content={`width=${viewport.width}, height=${viewport.height}, initial-scale=${viewport.initialScale},`}
+        />
+        {/* 设置主题颜色 */}
+        <meta name='theme-color' content='red' />
+      </Head>
 
       <body>
         <Web3Provider initialState={initialState}>

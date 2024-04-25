@@ -29,28 +29,38 @@
 //   )
 // }
 import * as React from 'react'
+import { LinkComponent } from './LinkComponent'
 
 interface SocialIconProps {
   src: string
   alt: string
+  link: string
+}
+interface SocialProps {
+  name: string
+  link: string
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ src, alt }) => (
-  <img loading='lazy' src={src} alt={alt} className='shrink-0 w-8 aspect-square' />
+const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, link }) => (
+  <LinkComponent href={link} isExternal>
+    <img loading='lazy' src={src} alt={alt} className='shrink-0 w-8 aspect-square' />
+  </LinkComponent>
 )
 
 interface LinkColumnProps {
   title: string
-  links: string[]
+  links: SocialProps[]
 }
 
 const LinkColumn: React.FC<LinkColumnProps> = ({ title, links }) => (
   <div className='flex flex-col justify-center'>
     <div className='text-lg font-semibold text-white'>{title}</div>
-    {links.map((link, index) => (
-      <div key={index} className='mt-3 tracking-wide'>
-        {link}
-      </div>
+    {links.map((item, index) => (
+      <LinkComponent href={item.link} isExternal>
+        <div key={index} className='mt-3'>
+          {item.name}
+        </div>
+      </LinkComponent>
     ))}
   </div>
 )
@@ -60,29 +70,53 @@ export function Footer() {
     {
       src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1695b25012983af265213992a4495efe7a561bcdf82e38b012f51f4d33f0881e?apiKey=53186c56703b47418c12cd21c1b9decd&',
       alt: 'Social icon 1',
+      link: 'https://twitter.com/haya_finance',
     },
     {
       src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/d45547c3850414a5699b804be6e41049b215594962cbfec8491dca3b99852575?apiKey=53186c56703b47418c12cd21c1b9decd&',
       alt: 'Social icon 2',
+      link: '',
     },
     {
       src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/feaad771d2651fe0ded6be33e32d9955ed1a0454287036a14ce89909ff3b3297?apiKey=53186c56703b47418c12cd21c1b9decd&',
       alt: 'Social icon 3',
+      link: 'https://t.me/Haya_Finance',
     },
     {
       src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1786b49b454b9e4da666c8b479505f73ee1b91f3dab50b77a7300d30bf93edfb?apiKey=53186c56703b47418c12cd21c1b9decd&',
       alt: 'Social icon 4',
+      link: '',
     },
   ]
 
-  const appLinks = ['Swap', 'Mint', 'Auction']
-  const resourceLinks = ['White Paper', 'Medium', 'Brand Kit']
+  const appLinks = [
+    {
+      name: 'Swap',
+      link: 'https://haya.finance/swap',
+    },
+    {
+      name: 'Mint',
+      link: 'https://haya.finance/mint',
+    },
+    {
+      name: 'Auction',
+      link: '',
+    },
+  ]
+  const resourceLinks = [
+    { name: 'White Paper', link: 'https://docs.haya.finance' },
+    { name: 'Medium', link: 'https://medium.com/@HayaFinance' },
+    {
+      name: 'Brand Kit',
+      link: 'https://drive.google.com/drive/folders/1oUCqCh6-DguiyMub08qpCFIIvjvtxWxa?usp=drive_link',
+    },
+  ]
 
   return (
     <>
       <footer className='flex pl-[270px]  pr-[270px] justify-center items-center px-2.5 py-20 w-full bg-zinc-900 max-md:px-5 max-md:max-w-full'>
-        <div className='flex gap-5 justify-center my-5 w-full max-w-[1340px] max-md:flex-wrap max-md:max-w-full'>
-          <div className='flex flex-col flex-1 items-start pr-20 max-md:max-w-full'>
+        <div className='flex gap-5 justify-center my-5 w-full max-w-[1340px] max-md:flex-wrap max-md:text-left max-md:max-w-full'>
+          <div className='flex flex-col flex-1 items-start pr-20 max-md:pr-0 max-md:max-w-full'>
             <img
               loading='lazy'
               src='https://cdn.builder.io/api/v1/image/assets/TEMP/b13059c74ad3746be1cc6bb5e756135922d30001c3c1e99620354416a85816f1?apiKey=53186c56703b47418c12cd21c1b9decd&'
@@ -95,11 +129,11 @@ export function Footer() {
             </p>
             <div className='flex gap-2.5 mt-5'>
               {socialIcons.map((icon, index) => (
-                <SocialIcon key={index} src={icon.src} alt={icon.alt} />
+                <SocialIcon key={index} src={icon.src} alt={icon.alt} link={icon.link} />
               ))}
             </div>
           </div>
-          <div className='flex gap-5 items-start pb-8 text-sm leading-5 text-stone-300'>
+          <div className='flex gap-5 flex-1 items-start pb-8 text-sm leading-5 text-stone-300'>
             <LinkColumn title='App' links={appLinks} />
             <LinkColumn title='Resource' links={resourceLinks} />
           </div>

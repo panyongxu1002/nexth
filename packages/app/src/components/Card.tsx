@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import Hero from '@/assets/icons/hreo.png'
+import Hero from '@/assets/icons/hreo.svg'
 import { LinkComponent } from './LinkComponent'
 
 interface HeroSectionProps {
@@ -16,7 +16,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
   return (
     <section className='flex justify-center  h-[892px] items-center px-16 py-20 w-full text-white bg-zinc-900 max-md:px-5 max-md:max-w-full'>
       <div className='flex flex-col items-center mt-10 mb-4 max-w-full w-[791px]'>
-        <Image
+        <img
           loading='lazy'
           src={imageSrc}
           alt='Hero image'
@@ -24,17 +24,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
           width={240}
           height={240}
         />
-        <h1 className='self-stretch mt-16 text-7xl font-bold text-center bg-clip-text leading-[88px] text-ellipsis max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[49px]'>
+        <h1 className='self-stretch mt-16 text-7xl font-bold text-center bg-clip-text leading-[88px] text-ellipsis max-md:mt-10 max-md:max-w-full max-md:text-6xl max-md:leading-[66px]'>
           {title}
-          <span className='bg-gradient-to-l bg-clip-text  from-green-500 via-green-400 to-green-600 text-transparent'>
+          <br className='hidden max-md:block' />
+          <span className='bg-gradient-to-l max-md:pt-4 bg-clip-text  from-green-500 via-green-400 to-green-600 text-transparent'>
             Airdrop
           </span>
         </h1>
-        <p className='self-stretch mt-5 text-2xl  font-medium leading-9 text-center text-ellipsis text-stone-300 max-md:max-w-full'>
+        <p className='self-stretch max-md:line-clamp-2 mt-5 text-2xl max-md:text-sm font-medium leading-9 text-center text-ellipsis text-stone-300 max-md:max-w-full'>
           {description}
         </p>
         {code ? (
-          <button className='justify-center px-16 py-5 mt-16 text-2xl font-semibold leading-8 bg-emerald-500 rounded-3xl max-md:px-5 max-md:mt-10'>
+          <button className='justify-center px-16 py-5 mt-16 text-2xl font-semibold leading-8 bg-emerald-500 rounded-3xl max-md:px-5 max-md:mt-10 max-md:w-full'>
             {ctaText}
           </button>
         ) : (
@@ -42,10 +43,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
             <input
               type='text'
               placeholder='Code'
-              className=' bg-white color-white placeholder-center text-[24px] placeholder-neutral-400 text-center text-neutral w-[300px] h-[70px] justify-center input input-bordered max-w-xs '
+              className=' bg-white color-white placeholder-center text-[24px] placeholder-neutral-400 text-center text-neutral w-[300px] h-[70px] justify-center input input-bordered  max-md:w-full'
             />
-            <LinkComponent href='/airdrop'>
-              <button className='justify-center px-12 py-5 rounded-3xl max-md:px-5 text-white bg-emerald-500'>
+            <LinkComponent href='/airdrop' className='max-md:w-full'>
+              <button className='justify-center px-12 py-5 rounded-3xl max-md:px-5 text-white bg-emerald-500 max-md:w-full'>
                 Enter
               </button>
             </LinkComponent>
@@ -66,7 +67,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, ctaText, 
 }
 
 export function Card({ code }: any) {
-  console.log('🚀 ~ Card ~ code:', code)
   return (
     <main>
       <HeroSection

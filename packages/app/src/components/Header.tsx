@@ -77,12 +77,12 @@ export function Header() {
           <LinkComponent href='/'>
             <img src={Icon.src} alt='Logo' width={87} height={30} className='mr-[30px]' />
           </LinkComponent>
-          <div className='shrink-0 w-[1px] h-[28px] mr-[30px] self-start mt-[5px] border border-solid aspect-[0.04] border-stone-300 stroke-[1px] stroke-stone-300'></div>
+          <div className='shrink-0 w-[1px] h-[28px] mr-[30px] self-start mt-[5px] border border-solid aspect-[0.04] border-stone-300 stroke-[1px] stroke-stone-300 hidden md:block'></div>
           {/* <button className='self-stretch my-auto mr-[30px]'>Home</button>
           <button className='self-stretch my-auto mr-[30px]'>Swap</button>
           <button className='self-stretch my-auto mr-[30px]'>Mint</button>
           <button className='self-stretch my-auto mr-[30px]'>Auction</button> */}
-          <button className='self-stretch my-auto text-emerald-500 max-md:max-w-full'>Quest</button>
+          <button className='self-stretch my-auto text-emerald-500 max-md:max-w-full hidden md:block'>Quest</button>
         </div>
         <button className='justify-center px-5 py-2.5 text-white bg-emerald-500 rounded-2xl leading-[100%] text-ellipsis'>
           {/* <Connect /> */}
