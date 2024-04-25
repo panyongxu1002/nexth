@@ -35,15 +35,14 @@ interface SocialIconProps {
   src: string
   alt: string
   link: string
-  index: number
 }
 interface SocialProps {
   name: string
   link: string
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, link, index }) => (
-  <LinkComponent key={index} href={link} isExternal>
+const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, link }) => (
+  <LinkComponent href={link} isExternal>
     <img loading='lazy' src={src} alt={alt} className='shrink-0 w-8 aspect-square' />
   </LinkComponent>
 )
@@ -57,7 +56,7 @@ const LinkColumn: React.FC<LinkColumnProps> = ({ title, links }) => (
   <div className='flex flex-col justify-center'>
     <div className='text-lg font-semibold text-white'>{title}</div>
     {links.map((item, index) => (
-      <LinkComponent key={title + index} href={item.link} isExternal>
+      <LinkComponent key={index} href={item.link} isExternal>
         <div className='mt-3'>{item.name}</div>
       </LinkComponent>
     ))}
@@ -99,7 +98,7 @@ export function Footer() {
     },
     {
       name: 'Auction',
-      link: '',
+      link: 'https://haya.finance/auction',
     },
   ]
   const resourceLinks = [
@@ -128,7 +127,7 @@ export function Footer() {
             </p>
             <div className='flex gap-2.5 mt-5'>
               {socialIcons.map((icon, index) => (
-                <SocialIcon index={index} src={icon.src} alt={icon.alt} link={icon.link} />
+                <SocialIcon key={index} src={icon.src} alt={icon.alt} link={icon.link} />
               ))}
             </div>
           </div>
