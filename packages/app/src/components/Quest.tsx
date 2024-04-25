@@ -73,7 +73,7 @@ export function Quest() {
   return (
     <div className='flex flex-col items-center px-20 py-16 w-full bg-neutral-100 max-md:px-2.5 max-md:pb-2.5 max-md:max-w-full'>
       <div className='text-5xl font-semibold text-black max-md:text-4xl pb-2.5'>Quest</div>
-      <div className='block w-full max-md:hidden'>
+      <div className='w-full max-md:hidden flex flex-col max-w-[1340px]'>
         {questData.map((quest, index) => (
           <QuestMdItem {...quest} key={index} />
         ))}
